@@ -2,6 +2,10 @@
 
 <img src="/images/home.JPG" alt="Drawing" width="200"/><img src="/images/programacao.JPG" alt="Drawing" width="200"/><img src="/images/trailers.JPG" alt="Drawing" width="200"/>
 
+## About
+
+This app consumes the [em-cartaz](https://em-cartaz.herokuapp.com/api/filmes) API and returns some of the recent releases in Brazil theathers.
+
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
