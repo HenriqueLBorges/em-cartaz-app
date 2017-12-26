@@ -20,8 +20,8 @@ export default class App extends React.Component {
               dataSource={this.state.dataSource}
               renderRow={(data) =>
                 <View style={styles.listContainer}>
-                  <View style={{ flexDirection: 'row', marginTop: "10%", marginBottom: "2%" }}>
-                    <Image source={{ uri: "http://2.bp.blogspot.com/-SWuCiz3Dr7g/VZslWnVcJJI/AAAAAAAAEts/TRlIkxxuiZk/s1600/image.gif" }} style={styles.photo} />
+                  <View style={{ flexDirection: 'row', marginTop: "10%", marginBottom: "3%" }}>
+                    <Image source={{ uri: data.imagem }} style={styles.photo} />
                     <View style={{ marginLeft: "5%" }}>
                       <View style={styles.textWrapContainer}>
                         <Text style={styles.title}>
@@ -51,7 +51,7 @@ export default class App extends React.Component {
                       Nota {data.nota} de 5.
                   </Text>
                   </View>
-                  {<View style={styles.textWrapContainer}>
+                  {<View style={styles.sinopseWrapContainer}>
                     <Text style={styles.text}>
                       {data.sinopse}
                     </Text>
@@ -61,7 +61,7 @@ export default class App extends React.Component {
                       return i !== data.genero.length - 1 ? nome + ", " : nome + "."
                     })}
                   </Text>
-                  <View style={{ flexDirection: 'row', marginTop: "2%", marginBottom: "2%", justifyContent: 'space-between' }}>
+                  <View style={{ flexDirection: 'row', marginTop: "5%", marginBottom: "2%", justifyContent: 'space-between' }}>
                     <View style={{ backgroundColor: "#F44336", alignContent: "center", borderRadius: 10, padding: 10, }}>
                       <Button
                         onPress={() => this.setState({ WebView: true, url: data.trailer })}
@@ -84,17 +84,20 @@ export default class App extends React.Component {
             />
             : !this.state.WebView ? <View style={styles.loadingView}><Text style={styles.loading}>Carregando...</Text></View> : <View></View>}
           {this.state.WebView ?
-            <View>
-              <View style={{ backgroundColor: "#BDBDBD", alignContent: "center", borderRadius: 5, padding: 5 }}>
+            <View style={{ flex: 1 }}>
+              <View style={{ backgroundColor: "#BDBDBD", alignContent: "center", borderRadius: 10, padding: 10 }}>
                 <Button
                   onPress={() => this.setState({ WebView: false, url: "" })}
                   title="Fechar navegação"
-                  color="black"
+                  color="white"
                   accessibilityLabel="Fechar navegação"
                 />
               </View>
               <WebView
                 source={{ uri: this.state.url }}
+                javaScriptEnabled={true}
+                domStorageEnabled={true}
+                startInLoadingState={true}
                 style={{ marginTop: 20 }}
               />
             </View>
@@ -178,6 +181,11 @@ const styles = StyleSheet.create({
   textWrapContainer: {
     alignSelf: 'flex-start',
     flexDirection: 'row'
+  },
+  sinopseWrapContainer: {
+    alignSelf: 'flex-start',
+    flexDirection: 'row',
+    marginTop: "5%"
   },
   title: {
     fontSize: 20,
