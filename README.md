@@ -1,8 +1,6 @@
 # Em cartaz React Native App
 
-<img src="/images/home.JPG" alt="Drawing" style="width: 50px;"/>
-<img src="/images/programacao.JPG" alt="Drawing" style="width: 50px;"/>
-<img src="/images/trailers.JPG" alt="Drawing" style="width: 50px;"/>
+![Home](/images/home.JPG =150x50) ![Programação](/images/programacao.JPG =150x50) ![Trailers](/images/trailers.JPG =150x50)
 
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
